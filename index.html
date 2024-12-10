@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Polideportivo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="formulario.html">Reserva</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bienvenido al Polideportivo</h1>
+
+        <section>
+            <h2>Deportes Disponibles</h2>
+            <ul>
+                <li>Fútbol
+                    <ol type="I">
+                        <li>Césped natural</li>
+                        <li>Césped artificial</li>
+                    </ol>
+                </li>
+                <li>Baloncesto
+                    <ul>
+                        <li>Cancha techada</li>
+                        <li>Cancha al aire libre</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Otras Instalaciones</strong>
+            <ul>
+                <li>Gimnasio
+                    <ol>
+                        <li>Área de pesas</li>
+                        <li>Área de cardio</li>
+                    </ol>
+                </li>
+                <li>Piscina
+                    <ol type="i">
+                        <li>Piscina olímpica</li>
+                        <li>Piscina recreativa</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Eventos Especiales</strong>
+            <ul>
+                <li>Competiciones locales</li>
+                <li>Exhibiciones deportivas
+                    <ol>
+                        <li>Campeonato de fútbol</li>
+                        <li>Torneo de baloncesto</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ol>
+<br/>
+        </section>
+
+        <section>
+            <h2>Horario de Apertura</h2>
+            <table border="8" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th colspan="2">Dia y Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Lunes a Viernes</td>
+                        <td>8:00 - 14:00</td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sábados</td>
+                        <td>10:00 - 20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Domingos y Festivos</td>
+                        <td>10:00 - 14:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Partes de la Cancha</h2>
+            <p>Haz clic en las diferentes áreas para obtener información.</p>
+            <img src="img/cancha.png" alt="Cancha" usemap="#mapaCancha">
+            <map name="mapaCancha">
+                <area shape="rect" coords="50,50,150,150" href="#" alt="Zona de ataque" title="Zona de ataque">
+                <area shape="rect" coords="200,50,300,150" href="#" alt="Zona de defensa" title="Zona de defensa">
+                <area shape="circle" coords="400,100,50" href="#" alt="Círculo central" title="Círculo central">
+            </map>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polideportivo. Todos los derechos reservados.</p>
+        <a type="application/rss+xml" href="rss/noticias.xml">
+            <img src="img/atom.png" width="50px" title="ir a las ultimas noticias">
+        </a>
+    </footer>
+</body>
+
+</html>

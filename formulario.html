@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulario de Reserva</title>
+    <script>
+        // Validación del campo Nombre
+        function validarNombre(input) {
+            const nombreRegex = /^[A-Z][a-zÀ-ÿ\s]*$/;
+            if (!nombreRegex.test(input.value)) {
+                input.setCustomValidity("El nombre debe empezar con mayúscula y solo contener letras.");
+            } else {
+                input.setCustomValidity("");
+            }
+        }
+
+        // Validación del campo Teléfono
+        function validarTelefono(input) {
+            const telefonoRegex = /^\d+$/;
+            if (!telefonoRegex.test(input.value)) {
+                input.setCustomValidity("El número de teléfono solo puede contener números.");
+            } else {
+                input.setCustomValidity("");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Polideportivo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="formulario.html" class="active">Reserva</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Formulario de Reserva</h1>
+
+        <form action="php/maneja_formulario.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" name="nombre" id="nombre" required maxlength="50" oninput="validarNombre(this)">
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" name="correo" id="correo" required>
+
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" name="telefono" id="telefono" required oninput="validarTelefono(this)">
+            </fieldset>
+
+            <fieldset>
+                <legend>Reserva de Instalación</legend>
+
+                <label for="instalacion">Instalación a reservar:</label>
+                <select id="instalacion" name="instalacion" required>
+                    <option value="">- Selecciona una -</option>
+                    <option value="futbol">Campo de Fútbol</option>
+                    <option value="baloncesto">Cancha de Baloncesto</option>
+                    <option value="gimnasio">Gimnasio</option>
+                    <option value="piscina">Piscina</option>
+                </select>
+
+                <label for="fecha">Fecha de la reserva:</label>
+                <input type="date" name="fecha" id="fecha" required>
+
+                <label for="hora">Hora de la reserva:</label>
+                <input type="time" name="hora" id="hora" required>
+
+                <label for="duracion">Duración de la reserva (en horas):</label>
+                <input type="number" name="duracion" id="duracion" min="1" max="8" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Servicios adicionales</legend>
+
+                <label>Selecciona servicios adicionales (puedes elegir varios):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="servicio" id="servicio1" value="equipo">
+                    <label for="servicio1">Alquiler de equipo deportivo</label>
+
+                    <input type="checkbox" name="servicio" id="servicio2" value="monitor">
+                    <label for="servicio2">Monitor personal</label>
+
+                    <input type="checkbox" name="servicio" id="servicio3" value="limpieza">
+                    <label for="servicio3">Servicio de limpieza</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Tipo de evento</legend>
+
+                <label>Selecciona el tipo de evento (solo puedes elegir uno):</label>
+                <div class="radio-group">
+                    <input type="radio" name="evento" id="evento1" value="entrenamiento">
+                    <label for="evento1">Entrenamiento</label>
+
+                    <input type="radio" name="evento" id="evento2" value="competicion">
+                    <label for="evento2">Competición</label>
+
+                    <input type="radio" name="evento" id="evento3" value="exhibicion">
+                    <label for="evento3">Exhibición</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Comentarios adicionales</legend>
+
+                <textarea name="comentarios" id="comentarios" placeholder="Escribe aquí tus comentarios..."></textarea>
+            </fieldset>
+
+            <button type="submit">Enviar reserva</button>
+            <button type="reset">Borrar datos del formulario</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Polideportivo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
